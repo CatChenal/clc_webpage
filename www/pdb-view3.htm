@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<HTML>
+<HEAD>
+<LINK href="stylesheet.css" rel="stylesheet" type="text/css">
+<!-- pdb-view3.htm-->
+
+	 <title>Model Structures</title>
+   <META NAME="Cat Chenal" CONTENT="">
+   <META NAME="GENERATOR" CONTENT="GeneDoc">
+   
+	<script src="Jmol.js"></script>
+</HEAD>
+
+<body>
+
+<div id="linkbar">
+	<p align=left>BICM 87000 - Bioinformatics - <a href="index.htm" target="_blank">Class Project</a></p>
+	<p align=left>PhD in Biochemistry Program, The Graduate Center, CUNY, Spring 2011</p>
+	<p> Prepared by Cat Chenal, graduate student in <a href="http://www.sci.ccny.cuny.edu/~gunner/" target="_blank">Dr. Gunner's Biophysics Lab, CCNY</a>
+</div>
+
+<div id="content">
+<h2>Part II - Best models returned from each server</h2>
+
+<div id="centered">
+	<p>In each of the model renderings below, the portions of the model shown in silver are missing in the truncated protein (3ORG).
+	</p>
+</div>
+<div id="highlight2">
+
+ <table border="2" cellspacing="0" cellpadding="2" bordercolor="#EAEAEA" id="models">
+ <tr>
+   <th>M4T: wt-3ORG</th>   <th>ModWeb: wt-3ORG</th>
+
+   <tr>
+   	<td valign="top" width="50%">
+   	<p>
+   		<strong>Model range</strong>: 70 to 536 (partial N-ter helix, start of CBS domain)	
+   		<img src="images/cds3264-M4T.png" width="600" height="400" alt="M4T-wt-3org" />
+   		 <div id="refs">
+   			<ul class="z">  Summary: 
+  				<li>Region of the target sequence covered by the model: 93 519</li>
+  				<li>Template(s) used : 2r9h_16_432_B 1kpl_22_438_D</li>
+  				<li>DOPE score(*) : -60516.890625</li>
+  				<li>Prosa2003 Zscore(*) : -5.03</li>
+  			</ul>
+   		</div>
+   	</p>	
+   	</td>
+   	<td valign="top" width="50%">
+   	<p><strong>Model range</strong>: 88 to 708 (no N-ter helices, CBS domain)	
+   		<img src="images/cds3264-ModWeb2.png" width="600" height="400" alt="M4T-wt-3org" />
+   		<div id="refs">
+   			<ul class="z">  Summary: 
+  				<li>No. of sequences submitted: 1</li>
+  				<li>No. of hits detected      : 15</li>
+  				<li>No. of models calculated  : 8</li>
+				  <li>No. of models selected    : 2</li>
+  				<li>Model selection criteria  : LONGEST_DOPE,SEQID,MPQS,DOPE</li>
+  			</ul>
+   		</div>
+   	</p>	
+   	</td>
+   </tr>
+  
+  <tr>
+   	<th>SWISS-MOD: wt-3ORG</th>  	  <th>I-TASSER: wt-3ORG</th> 
+   	<tr>   	
+   	<td valign="top" halign="left" width="50%">
+   	<p><strong>Model range</strong>: 88 to 708 (no N-ter helices, CBS domain) 
+   		<img src="images/cds3264-SWISS-MOD.png" width="600" height="400" alt="SWISS-MOD-wt-3org" />
+   		<div id="refs">
+   			<ul class="z">Summary: 
+					<li>Model information:</li>	
+					<li>Modelled residue range:	 88 to 708</li>
+					<li>Based on template:	 3orgC (3.50 Å)</li>
+					<li>Sequence Identity [%]:	 83.736</li>
+					<li>Evalue:	 0.00e-1</li>
+    			<li>Quality information:</li>
+					<li>QMEAN Z-Score: -6.439</li>
+					<li><a href="data/SwissModelResults-CDS3264.pdf" target="_blank">Complete server report</a>
+				</ul>
+			</div>
+    </p>
+   	</td>
+   	<td valign="top" halign="left" width="50%">
+   	<p>
+   	 <strong>Model range</strong>: Full (715 residues)
+   		<img src="images/cds3264-TASSER1.png" width="600" height="400" alt="I-TASSER model: Not yet available, click on Summary link below to check on completion"/>
+   		<div id="refs">
+   			<ul class="z">Summary: <strong>wt-3ORG </strong><a href="http://zhanglab.ccmb.med.umich.edu/I-TASSER/output/S71698/" target="_blank">output/S71698/</a>
+   				<li>Estimated accuracy of Model1: 0.52±0.15 (TM-score)    12.1±4.4Å (RMSD) </li>
+   			<ul>
+   			<ul class="z">Summary: <strong>3ORG </strong><a href="http:http://zhanglab.ccmb.med.umich.edu/I-TASSER/output/S71011/ target="_blank">output/S71011/</a>
+   				<li>Estimated accuracy of Model1: 0.78±0.09 (TM-score)    6.7±4.0Å (RMSD)</li>
+   			</ul>
+   		</div>
+    </p>
+   	</td>
+   	</tr>
+ 	  </table>
+</div>
+
+<h2>Part II - Discussion</h2>
+
+	<ol class="c"><strong>Models of wild-type 3ORG</strong>
+		<li>M4T is the worst performer of the set. It used the 2R9H structure deposited in 2007 by Miller & Nguitragool, which is none other that a mutant of 1OTS with fab fragments (its descriptive title is "Crystal Structure of Q207C Mutant of CLC-ec1 in complex with Fab"). Moreover, it selected the same template structure when 3ORG was submitted. Therefore it is no wonder that it cannot model the CBS domain.
+		</li>
+		<li>ModWeb is odd in a different way: none of the 2 structures returned (#2 is shown) have the N-ter portion and #1 does not have the CBS domain. Model#2 has it, but it does not look right. Also the paucity of the information given with the model makes it easy to assimilate ModWeb to a blackbox.	
+		</li>
+		<li>SWISS-MOD uses 3ORG as template (although it consistently chooses 3orgC, not 3orgA), however, it seems to stick to it too much and apparently<em>discarded</em> the N-terminal segment that is part of the wt model.
+		</li>
+	<li>From the model of 3ORG returned by I-TASSER, I had high hopes that it could handle another 85 residues and modell the wild type just as well, but only the first model is useable. It is possible that another attempt will change this, for it seems the problem emanates from the template list: in the wt-ORG run, a very odd entry appears (even though it is not a homologue), so perhaps this may thrown the iterations off kilter.
+
+	</ol>
+	
+<h3>Conclusion:</h3>
+<p>Three of the four modelling programs seem to have a sequence length threshold. While M4T does not have an outright input sequence length limit, unlike the SAM06 server whose limit is 600 residues, it does behave very oddly and is not to be relied on. The best is I-TASSER although it perform better on the shorter sequence.</p>
+<p> Therefore, on the basis of this limited experiment, both hypotheses are proven wrong:
+<ol class="c">
+<li>In spite of the availability of several templates for the N-terminal modeling AND despite the fact that secondary structure forming helices ought to be readily identified, only the I-TSASSER programs was unable the recover this helical region.</li>
+<li>As per the picture of the best I-TASSER model below showing the 1OTS dimer overlayed with the full model, the N-terminal has no apparent interaction with the other monomer or with the CBS domain, although the ultimate test would be to refine the expression and purification procedures so that the exchanger can be characterized in its integral state.</li>
+</ol>
+<div id="highlight2">
+<p>
+   		<img src="images/Supdimer-1ots-cds3264.png" width="600" height="400" alt="I-TASSER CDS3264 model"/>
+</p>
+   		</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<html>
+<head>
+<LINK href="stylesheet.css" rel="stylesheet" type="text/css">
+<!-- top pane-->
+
+<title>Top Structure</title>
+<script src="Jmol.js"></script>
+</head>
+
+<body>
+<div id="centered2">
+<!--  <div id="highlight2">   -->
+	<p>1OTSa Filter motifs: </p>
+	<p>
+	<font color="#00CCFF"><strong>GSGIPEIe</strong>&nbsp;&nbsp;</font>
+	<!--font color="#660066"><strong>K131</strong>&nbsp;&nbsp;</font>
+		-->
+	<font color="#CC0066"><strong>LGREGPxV</strong>&nbsp;&nbsp;</font>
+	<font color="#5F9EA0"><strong>GiFaP</strong>&nbsp;&nbsp;</font>
+	<!-- <font color="violet"><strong>Y445</strong>&nbsp;&nbsp;</font>
+	-->
+	<font color="#00CCFF"><strong>LYSaI</strong>&nbsp;&nbsp;</font>
+		<a href="javascript:window.location.reload(true)" target="_self">Reload</a>
+	</p>
+	<!--            
+	                GiFaP	color [200,0,100]	#cadetblue #5F9EA0 
+	                LYSaI color [0,204,255]	#00CCFF
+	                GSGIPEIe	color [0,204,255]	#00CCFF
+	                K131		color [102,0,102]	#660066
+	                LGREGPxV	color [0,204,255]	#00CCFF
+	                              
+	                GiFaP, resi 355+357+359
+	                LYSaI, resi 444:446+448 
+	                GSGIPEIe, resi 106+108:113
+	                LGREGPxV, resi 145:150+152
+	                
+	                "[100%, 100%]",
+-->
+	<p>
+	<script>
+      jmolInitialize(".");
+      jmolCheckBrowser("popup", "./browsercheck", "onClick");
+      jmolSetAppletColor("#b4b4ff");
+      jmolApplet("[100%, 300%]","load data/1otsaFilter.pdb; reset; center {36.444 -7.901 16.228}; rotate z 143.52; rotate y 63.33; rotate z -156.67; translate x 0.1; background white; set specular 20; set diffuse 100; set ambient 50; select *.c??; #Color carbons gray; color [153,153,153]; #JMol MODIFIED DEFAULT CPK COLORS; select (106, 107, 108, 109, 110, 111, 112, 113); color [0,204,255]; select 131; color [102, 0, 102];select (145,146, 147, 148, 149, 150, 152); color [204,0,102]; select (355, 356, 357, 358, 359); color cadetblue; select (444-446,448); color [0,204,255]; select (445); color violet; select protein; spacefill off; wireframe 50; select cl; color [102,204,102]; spacefill 400; select * and not hoh; restrict selected; spin on;", "Filter");
+	</script>
+	</p>
+	<BR>
+	<BR>	
+</div>
+</body>
+</html>

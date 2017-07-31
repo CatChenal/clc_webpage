@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<html>
+
+<head>
+	<LINK href="stylesheet.css" rel="stylesheet" type="text/css">
+
+	<title>CLC Narrative</title>
+	<script src="Jmol.js"></script>
+</head>
+
+<body >
+	<div id="linkbar">
+	<p>BICM 87000 - Bioinformatics <a href="http://singhlab.org/" />(Dr. S. Singh)</a> - Class Project</p>
+	<p>PhD in Biochemistry Program, The Graduate Center, CUNY, Spring 2011</p>
+	<p> Prepared by Cat Chenal, graduate student in <a href="http://www.sci.ccny.cuny.edu/~gunner/">Dr. Gunner's Biophysics Lab, CCNY</a>
+  </div>
+  
+<div id="content">
+ 
+ <h1>E. coli CLC channel: a Cl<sup>-</sup>/H<sup>+</sup><i> Exchanger</i> </h1>
+ 
+ <h2>The Chloride Channel Family</h2>
+
+ 		<p>The cloning of CLC-0, a voltage-gated Cl<sup>-</sup> channel of the electrocyte of the Torpedo ray by Jentsch et al. in 1990 led to the identification of the CLC gene family of chloride channels which are physiologically necessary across phylla [1,2].</p>
+ 		<p>The CLC family of Cl<sup>-</sup>-transporting proteins encodes both ion channels and Cl<sup>-</sup>/H<sup>+</sup> exchangers [3,4], and mutations in five of the nine human CLC genes lead to genetically inherited diseases [1]. The nine mammalian isoforms are not all voltage-gated and have a split localization: about half in the plasma membranes and the other in the endosomal-lysosomal vesicular membranes [1,6]. In the plasma membrane of cells, CLC channels have a role in determining the resting &Delta;V<sub>m</sub> in skeletal muscle fibers, balance salt transport in kidney, inner ear and other epithelial tissues.  The exchangers are confined to the membranes of cellular compartments such as endosomes, lysosomes, osteoclastic lacunas, plant vacuoles and synaptic vesicles, or in the bacterial membrane. The CLC transporters play a key role in acidification of the compartments where they reside [6].</p>
+ 		<p align="center">
+ 			<img src="images/Duran2010-Fig1.png" alt="The chloride channels family"><BR>
+ 		  (Duran et al., 2010 [6])</P>
+ 	
+		<p>One of the three prokaryotic homologues structures available belongs to Escherichia coli's (commonly referred to as CLCec1, or ecCLC here, with pdb id 1OTS & 1KPK). This secondary active antiporter exchanges 2 Cl<sup>-</sup> for 1 H<sup>+</sup>[3].</p>
+		<p>Structurally and biologically, the antiporter is a homodimer whose subunits are made up of 14 helical transmembrane segments with a so-called inverted or anti-parallel topology as characterized by the MacKinnon team (Dutzler et al., 2002 [4,5]), when this group resolved the first crystal structure of this CLC channel homologue.
+		</p>
+ 
+ <h2>Bioinformatic Project - Part I </h2>
+
+ <h3>ecCLC's &quotselectivity filter&quot</h3>
+   
+			<p>All CLC channels share several highly conserved motifs, including the Cl<sup>-</sup> coordination motif, shown below and also in the right pane (Filter motifs):</p> 
+			<p>These motifs, clearly visible from a <a href="CLCs-Alignment.htm" target="_blank">sequence alignment of chloride channels</a> and from the Jmol [e] rendering on the top right pane, consists of three different 5-consecutive-residue long stretches, along with an intervening lysine (K131) and a sequentially terminal tyrosine (Y445):
+			</p><BR>
+			<pre>
+      G106-S107-G108-I109-P110-E111-x(19)-K131-x(14)-
+      
+      G146-R147-E148-G149-P150-x(204)-
+      
+      G355-I356-F357-A358-P359-x(89)Tyr445
+			</pre>
+			
+			<p>Depicted below, is the ecCLC sequence portion that includes the Cl coordinating motif per se, GSGIP, and the "external gate" residues,GREGP [7]; variants are denoted by asterisks:</p><BR>
+			<pre>
+      100       110       120       130       140       150
+      0123456789012345678901234567890123456789012345678901 
+            |||||                    |              |||||
+      YAPEAGGSGIPEIEGALEDQRPVRWWRVLPVKFFGGLGTLGGGMVLGREGPT
+             P*                                      K*    
+[...] 350       360       370       380       390       400
+      0123456789012345678901234567890123456789012345678901
+           |||||           
+      SGAPGGIFAPMLALGTVLGTAFGMVAVELFPQYHLEAGTFAIAGMGALLAAS
+            * *    
+      402     410       420       430       440       450
+      23456789012345678901234567890123456789012345678901
+                                                 |            
+      IRAPLTGIILVLEMTDNYQLILPMIITGLGATLLAQFTGGKPLYSAILAR                                                               
+      </pre>
+              
+			<p> Variants:
+			<ul class="a">
+				<li>P107: found in the chloride channel of plants and is solely responsible for switching the selectivity to nitrate;</li><BR>
+    		<li>K147: found in eukaryotic channels</li><BR>
+    		<li>GIFAP: found across phyla as GxFxD where x is hydrophopbic </li><BR>
+
+    	</ul>
+    	</p>
+    	
+	<h3>Hypothesis:</h3>
+	
+		<p>If there are proteins, not identified as chloride channels even in a putative way, that contain this highly conserved Cl<sup>-</sup> (or anion) selective motif, they are also channels.
+		</p><BR>
+		
+	<h3>Methods:</h3>
+	
+	<ol class="c">
+	<li>Search motif selection:</li><BR>
+		
+		<p> The essential residues described above can be searched for in annotated databases using the following regular expressions (among many other combinations):</p>
+		<div id="highlight">	
+			<ol class="d">
+				<li>G-[SP]-G-I-P</li>
+				<li>G-[SP]-G-I-P-x(19)-K: includes the intervening lysine</li>
+    		<li>G-[RK]-E-G-P</li>
+    		<li>K-x(14)-G-[RK]-E-G-P: includes the intervening lysine</li>
+    		<li>G-y-F-y-P:	y = hydrophobic residue</li>
+    		<li>G-y-F-y-P-x(89)-Y445: includes trailing tyrosine</li>
+		</div><BR>
+		<p> However, half of these combinations, b, d and f, would somewhat biais the results towards homolgues and/or are either too common a motif (e) or are beyond the computing capabilities of the search algorithms (f). Because of this, I have selected to perform two motif searches using a and c.</p>
+		<BR>
+		<ul class="b">
+			<li>Pattern search engine used:</li>
+			<ul class="a">
+	    	<li>http://myhits.isb-sib.ch/cgi-bin/pattern_search#</li><BR>
+	    </ul>
+	    <li>Database of proteins:</li>
+	    <ul class="a">
+	    	<li>Complete proteomes from Archaea [arch]</li>
+	    	<li>Complete proteomes from Bacteria [bact]</li>
+	    	<li>Complete proteomes from Eukayota [euk]</li>
+	    </ul>
+	  </ul><BR>
+	
+	<li>Analysis:</li><BR>
+	
+		<p> The search results consist of two sets (lists) of proteins: the one containing motif a, the other containing motif c, therefore I eliminated from both list those proteins described with the following key words:</p>
+		<ul class="b">
+			<li>chloride channel or chloride-channel</li>
+			<li>chloride ion channel</li>
+			<li>chloride transporter</li>
+			<li>cl-channel</li>
+			<li>clc family</li>
+			<li>chloride transport</li><BR>
+		</ul>
+		<p> The filtering was done using UNIX utilities & the final files comparison was done via an awk script, 
+		    which was first tested on two files of known composition:</p>
+		<pre>awk -f ~/bin/getcommon.awk GSGIP-final.hits GREGP-final.hits</pre>
+		  
+		<p> The proteins present in <i>both</i> reduced sets (<a href="data/GREGP-final.hits.txt" target="_blank">G[RK]EGP-final</a> and <a href="data/GSGIP-final.hits.txt" target="_blank">G[SP]GIP-final</a>), should therefore be either unknown proteins, or proteins identified with different keywords hence, presumably, with different functions.</p>
+	</ol>	
+	<h3>Results:</h3>
+	
+	<ul class="z">
+	<li>
+	 <table border="3" cellspacing="0" cellpadding="10" bordercolor="#EAEAEA" id="resultsI">
+    	<th>Search pattern</th>
+    	<th>Raw count</th>
+      <th>Filtered</th>
+      <th>Common</th>
+		<tr>
+      <td valign="top" width="40%">
+				<p>G-[SP]-G-I-P</p>
+				<p>G-[RK]-E-G-P</p>
+      </td>
+      <td valign="top" width="20%">
+				<p>2536</p>
+				<p>2259</p>
+      </td>
+      <td valign="top" width="20%">
+				<p>2187</p>
+				<p>1629</p>
+      </td>
+      <td valign="center" width="20%">
+				<p>0</p>
+      </td>      
+ 		</tr>
+ 	</table>
+ 	</li>
+ 	</ul>
+			
+	<BR>
+  
+	<h3>Conclusion:</h3>
+	
+	<p>The doublet of 5-residue-long motifs that was used to search the complete proteomes of Archea, Bacteria and Eukaryota is sufficient to recover the entire
+	CLC channel class of proteins, including those putatively assigned to it. This is rather remarkable since, within the CLC class, the proteins are made up of over 450 residues if they are Prokaryotes, or over 600 residues if they are Eukaryotes.</p><BR>
+<!-- ##################################################################### -->
+		
+ <h2>Bioinformatic Project - Part II </h2>
+
+ <h3>Modeling missing residues in the Eukaryote structure</h3>
+   
+	<p>To date, there is only one structure of a eukaryotic chloride/proton exchanger. This chloride channel protein called cmCLC belongs to a unicellular, thermophilic red alga, Cyanidioschyzon merolae, and its structure was determined to a 3.5 &Aring resolution in 2010 by the MacKinnon group [8; 3ORG.pdb].</p>
+
+	<p>Unfortunately, the first 85 residues were lost through hydrolysis during the purification of this eukaryotic homologue of the E.coli chloride/proton exchanger  (ecCLC). EcCLC has been crystallized to a 2.5 &Aring resolution in 2003 also by the same group [4].</p><BR>
+
+	<p><strong>Structural particularities of 3ORG:</strong></p>
+
+	<p>The authors have expressed "[o]n the basis of limited proteolysis, a final construct excluding 86 N-terminal and 7 C-terminal amino acids", as stated in their report[8]. However, this statement is not quite straightforward since one has to consult the Supplementary Information to find out that the 7 terminal residues are not merely missing, but that they have been replaced by 9 residues belonging to a protease pre-scission recognition sequence used in the cleavage of an attached GFP at the C-terminal.</p>
+ 	<p>Using the SEQ record of the pdb, along with the COBALT alignment of 3orga and CDS3234 (its parent sequence), I have been able to pinpoint these discrepancies:</p>
+ 	<p>
+		<ul class="a">
+			<li>N-terminal:</li>
+				<ul class="b">
+					<li>The first 86 residues were hydrolized, then a Met residue subsequently capped the N-terminal (so that M1 in ORG is R86 in CDS3264, the parent sequence); this is not stated outright in the paper, only in the Supplemental Information.</li>
+				</ul><BR>
+			<li>C-terminal:</li>
+				<ul class="b">
+					<li>Below is the sequence alignment of the tailing residues of the C-terminal of 3orga and its parent showing the 9-residue mutation:<BR><BR>
+					<pre>
+3ORG-a   YGYSNSLEVLFQ  632
+            SNSLEVLFQ : protease PreScission recognition sequence
+CDS3264  YGYREPEQTS--  715
+            123456789</pre>
+          </li>
+        </ul>
+      </ul>
+	</p>
+	
+	<p>In the context of this short bioinformatic project, I thought these terminal losses would provide for a succinct evaluation of several protein structure modeling programs, and this for two reasons:</p>
+			<p>
+			<ul class="a">
+				<li> Two structures from Prokaryotes (Salmonella typhimurium [1KPL] and Escherichia coli [1OTS]) are expected to be found as templates by all algorithms.</li><BR>
+				<li> These templates are only partial templates since a number of N-terminal residues (1-16) are 'missing' due to non-resolution of the x-ray diffraction patterns in that region (but the proteins have been expressed and purified in full form).</li><BR>
+			</ul>
+	
+<h3>Hypotheses:</h3>
+	<ol class="c">
+		<li>Considering the above in addition to the fact that the two N-terminal segments have only 40% identity, to what extent in coverage and RMSD can the models recover the missing residues? Because the core, or transmembrane domain of the protein is all alpha-helical, the hypothesis is that all models should recover the structure.</li><BR>
+		<li>	   	
+	   	3ORG, as characterized by the MacKinnon group, is a functional exchanger and its dimer state is presumed from the crystal structure. Yet, because of the extent of its N-ter deletion and C-ter modification, it is far from wild-type. 
+	   	A second hypothesis of this modeling project is the following: the finding of a reliable, full length model will be the second weakness of the proposed mechanistic explanation for the chloride/proton exchange in 3ORG hence, via homolgy, in all eukaryotic CLCs.  Its first weakness is to be based on a &quotfunctional&quot protein whose length is only 88% of its wild-type, and the second will relate to the possiblity that the missing N-terminal portion is found to interact with it's C-terminal. This is a plausible situation since several of ecCLC's N-ter residues are H-bonding with C-ter residues of the <em>other</em> monomer as it is visible in the overlay picture of 1OTS and 3ORG (Figure 1.)<BR>
+	   	<div id="highlight2">
+	   			<p><img src="images/Supdimer-1ots-3org.png" width="600" height="400" alt="overlay" />
+			<div id="refs"><strong>Figure 1.</strong> Overlay of ecCLC/1OTS (pale blue) and cmCLC/3ORG (magenta). The segment colored pale yellow consists of 1OTS residues 17-85. The two resolved exogenous C-ter tail residues of 3ORG are depicted in white and space-filling model.</div>
+	   	</p></div>
+		</li> 
+	</ol>
+	<BR>
+	<h3>Methods:</h3>
+	
+	<ol class="c">
+		<li>Model submission:</li><BR>
+			<p>Because of the structural peculiarities considered above, I submitted 3ORG, along with CDS3264 (i.e. wt-3ORG), for modeling.</p>
+
+			<p> The sequences were submitted to four different programs (M4T, ModWeb, SWISS-MODEL, I-TASSER [g, h, i, j]) via the <a href="http://www.proteinmodelportal.org/?pid=modelling_interactive">protein portal</a> [f].</p>
+	</ol>
+	<BR>
+	<h3>Results & Discussion:</h3>
+
+	<p>The four models returned by the programs: <a href="pdb-view3.htm" target="_blank">PyMol [d] snapshots.</a>
+
+<BR>	
+<BR>
+<h3>References:</h3>
+<div id="refs">
+ <table border="2" cellspacing="0" cellpadding="3" bordercolor="#EAEAEA" id="refs-intro">
+   <tr>
+   	<td valign="top" halign="left" width="100%">
+   	
+		<p>1.	Jentsch TJ; CLC chloride channels and transporters: from genes to protein structure, pathology and physiology;
+		 Crit. Rev. Biochem. Mol. Biol. (2008) 43:3–36 (doi:10.1080/10409230701829110)</p>
+		<p>2.	Accardi A, Picollo A; CLC channels and transporters: Proteins with borderline personalities;
+		 Biochim. Biophys. Acta (2010), (doi:10.1016/j.bbamem.2010.02.022)</p>
+		<p>3.	Accardi A, & Miller C; Secondary active transport mediated by a prokaryotic homologue of ClC Cl<sup>-</sup> channels;
+		 Nature 427, 803807 (2004).</p>
+		<p>4.	Dutzler R, Campbell EB, Cadene M, Chait BT, MacKinnon R; X-ray structure of a ClC chloride channel at 3.0 &Aring; reveals the molecular basis of anion selectivity; Nature, vol 415, 17 January 2002</p>
+		<p>5.	Dutzler R, Campbell EB, MacKinnon R; Gating the selectivity filter in ClC chloride channels;
+		 Science 300, 108112 (2003)</p>
+		<p>6. Duran C, Thompson CH, Xiao Q, Hartzell HC; Chloride Channels: Often Enigmatic, Rarely Predictable; Annu. Rev. Physiol. (2010) 72:95–121</P>
+   	<p>7.	Picollo A, Malvezzi M, Houtman JCD, Accardi A; Basis of substrate binding and conservation of selectivity in the CLC family of channels and transporters;
+		 Nat. Struct. Mol. Biol. (2009) 16:12 1294-1302 </p>
+		<p>8. Feng L, Campbell EB, Hsiung Y, MacKinnon R; Structure of a eukaryotic CLC transporter defines an intermediate state in the transport cycle (2010) Science 330: 635-641</p>
+		<p>***************</p>
+<!--	alignment tools -->
+		<p>a.1 Sigrist CJ, Cerutti L, de Castro E, Langendijk-Genevaux PS, Bulliard V, Bairoch A, Hulo N; PROSITE, a protein domain database for functional characterization and annotation; Nucleic Acids Res. 2010 Jan; 38(Database issue):D161-6</p>
+		<p>a.2 Larkin MA, Blackshields G, Brown NP, Chenna R, McGettigan PA, McWilliam H, Valentin F, Wallace IM, Wilm A, Lopez R, Thompson JD, Gibson TJ, Higgins DG; Clustal W and Clustal X version 2.0. Bioinformatics (2007) 23, 2947-2948</p>
+	  <p>b. GeneDoc: Nicholas KB, Nicholas HB, Deerfield DW; EMBNEW. NEWS, Vol. 4 (1997)<p>
+	  <p>c. COBALT multiple alignment: Papadopoulos JS and Agarwala R, Bioinformatics 23:1073-79, 2007 (PMID:17332019);</p>
+
+<!--	  visualization programs -->
+	  <p>d. The PyMOL Molecular Graphics System, Version 1.3, Schrödinger, LLC</p>
+	  <p>e. Jmol: an open-source Java viewer for chemical structures in 3D. http://www.jmol.org/ </p>
+
+	  	   
+<!--		modeling servers -->
+		<p>f.1 Arnold K, Kiefer F, Kopp J, Battey JN, Podvinec M, Westbrook JD, Berman HM, Bordoli L and Schwede T; The Protein Model Portal. J Struct Funct Genomics (2009), 10, 1-8. [PMID: 19037750]</p>
+   	<p>f.2 Nicholas KB, Nicholas HB, Deerfield DW; EMBNEW. NEWS, Vol. 4 (1997)</p>
+	  <p>f.3 Papadopoulos JS and Agarwala R, Bioinformatics 23:1073-79, 2007 [PMID: 17332019]; </p>
+	  
+<!--M4T    REFERENCE M4T Method --->
+		<p>g.1 Fernandez-Fuentes N, Rai BK, Madrid-Aliste CJ, Fajardo JE, Fiser A; Comparative protein structure modeling by combining of multiple templates and optimizing sequence-to-structure alignments; Bioinformatics (2007) 23(19): 2558-65</p>
+<!--  REFERENCE M4T Web-server -->
+		<p>g.2 Fernandez-Fuentes N, Madrid-Aliste CJ, Rai BK, Fajardo JE, Fiser A M4T: a comparative protein structure modeling server; Nucleic Acids Res (2007) 35(Web S): W363-8</p>	 	
+ 
+<!-- ModWeb  -->
+<p>h.salilab.org</p>
+
+<!-- Swiss-Model-->
+	  <p>i.1 Arnold K, Bordoli L, Kopp J, Schwede T; The SWISS-MODEL Workspace: A web-based environment for protein structure homology modelling. Bioinformatics (2006), 22,195-201</P>
+	<p>i.2 Schwede T, Kopp J, Guex N, Peitsch MC; SWISS-MODEL: an automated protein homology-modeling server. Nucleic Acids Research (2003) 31:3381-3385</p>
+	<p>i.3 Guex N, Peitsch MC; SWISS-MODEL and the Swiss-PdbViewer: An environment for comparative protein modelling. Electrophoresis (1997) 18:2714-2723</p>
+<!--Qmean: -->
+	<p>i.4 Benkert P, Biasini M, Schwede T; Toward the estimation of the absolute quality of individual protein structure models; Bioinformatics (2011) 27(3):343-50<p> 
+</p> 
+
+<!-- I-TASSER?  -->	  
+	<p>j.1 Roy A, Kucukural A, Zhang Y; I-TASSER: a unified platform for automated protein structure and function prediction; Nature Protocols, vol 5, 725-738 (2010)<p>
+	<p>j.2 Zhang Y; Template-based modeling and free modeling by I-TASSER in CASP7. Proteins, vol 69 (Suppl 8), 108-117 (2007)</p>
+ 	</td>
+ 	</tr>
+ </table>
+ </div>
+ 
+</div>
+
+</body>
+</html>

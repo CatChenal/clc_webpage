@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<html>
+
+<head>
+<LINK href="stylesheet.css" rel="stylesheet" type="text/css">
+<!-- pdb-view1.htm-->
+
+<title>Top Structure</title>
+	<script src="Jmol.js"></script>
+	
+</head>
+
+<body>
+<div id="highlight2">
+<!-- top pane-->
+
+	<p>1OTSa Filter motifs: 
+	<font color="#00CCFF"><b>GSGIP&nbsp;&nbsp;</font>
+	<font color="#660066">K131&nbsp;&nbsp;</font>
+	<font color="#CC0066">GREGP&nbsp;&nbsp;</font>
+	<font color="#5F9EA0">GiFaP&nbsp;&nbsp;</font>
+	<font color="violet">Y445&nbsp;&nbsp;</b></font>
+		<a href="javascript:window.location.reload(true)" target="_self">Reload</a>
+	<!--            GSGIP	color [0,204,255]	#00CCFF
+									K		color [102,0,102]	#660066
+	                GREGP	color [204,0,102]	#CC0066
+	                GIFAP	color [200,0,100]	#cadetblue #5F9EA0
+	-->
+	</p>
+ <p>	
+	<!--webbot bot="PurpleText" PREVIEW="Start Jmol script - Do not delete --&gt;" -->
+	<script>
+      jmolInitialize(".");
+      jmolCheckBrowser("popup", "./browsercheck", "onClick");
+      jmolSetAppletColor("#b4b4ff");
+
+			<!--pdb="data/" + jmolCommandInput("Load", 40);-->
+      jmolApplet("90%", "load data/1otsaFilter.pdb; reset; center {36.444 -7.901 16.228}; rotate z 143.52; rotate y 63.33; rotate z -156.67; translate x 0.1; background black; set specular 20; set diffuse 100; set ambient 50; select *.c??; #Color carbons gray; color [153,153,153]; #JMol MODIFIED DEFAULT CPK COLORS; select (106, 107, 108, 109, 110); color [0,204,255]; select 131; color [102, 0, 102];select (146, 147, 148, 149, 150); color [204,0,102]; select (355, 356, 357, 358, 359); color cadetblue; select (445); color violet; select protein; spacefill off; wireframe 50; select cl; color [102,204,102]; spacefill 400; select * and not hoh; restrict selected; spin on;", "Filter");
+	</script>
+	<!--webbot bot="PurpleText" PREVIEW="End Jmol script" -->
+
+	</p>
+</div>
+</body>
+</html>

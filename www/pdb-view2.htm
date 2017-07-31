@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<html>
+<head>
+<LINK href="stylesheet.css" rel="stylesheet" type="text/css">
+<!-- bottom pane-->
+
+<title>Bottom Structure</title>
+<script src="Jmol.js"></script>
+</head>
+
+<body>
+<div id="highlight2">
+	<p>E. coli dimer (1OTS): N-ter residues 17 to 85 in yellow <a href="javascript:window.location.reload(true)" target="_self">Reload</a>
+	</p>
+	<p>
+	<script>
+      jmolInitialize(".");
+      jmolCheckBrowser("popup", "./browsercheck", "onClick");
+      jmolSetAppletColor("#b4b4ff");
+      jmolApplet("[1.0, 1.0]", "load data/1otsab.pdb; #INITIAL ORIENTATION;reset;rotate x -90; rotate y 45;rotate z -108; translate y 4.5; zoom 100; background black; set specular 20; set diffuse 100; set ambient 50; spin off; wireframe off; spacefill off; trace off; backbone off; restrict protein; cartoons; color structure; select cl; color [102,204,102]; spacefill 400; select * and not hoh; restrict selected; select (17 - 85); color gold;", "Dimer");
+	</script>
+	</p>
+	<BR>
+	<BR>	
+</div>
+</body>
+</html>

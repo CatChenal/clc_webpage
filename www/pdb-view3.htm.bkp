@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+
+<HTML>
+<HEAD>
+<LINK href="stylesheet.css" rel="stylesheet" type="text/css">
+<!-- pdb-view3.htm-->
+
+	 <title>Model Structures</title>
+   <META NAME="Cat Chenal" CONTENT="">
+   <META NAME="GENERATOR" CONTENT="GeneDoc">
+   
+	<script src="Jmol.js"></script>
+</HEAD>
+
+<body>
+
+<div id="linkbar">
+	<p align=left>BICM 87000 - Bioinformatics - <a href="index.htm" target="_blank">Class Project</a></p>
+	<p align=left>PhD in Biochemistry Program, The Graduate Center, CUNY, Spring 2011</p>
+	<p> Prepared by Cat Chenal, graduate student in <a href="http://www.sci.ccny.cuny.edu/~gunner/" target="_blank">Dr. Gunner's Biophysics Lab, CCNY</a>
+</div>
+
+<div id="content">
+<h2>Part II - Best models returned from each server</h2>
+
+<div id="centered">
+	<p>In each of the model renderings below, the portions of the model shown in silver are missing in the truncated protein (3ORG).
+	</p>
+</div>
+<div id="highlight2">
+
+ <table border="2" cellspacing="0" cellpadding="2" bordercolor="#EAEAEA" id="models">
+ <tr>
+   <!-- <th>M4T: 3ORG</th> -->
+   <th>M4T: wt-3ORG</th>
+   <tr>
+   <!--	<td valign="top" width="50%">
+   	<p>
+   		<strong>Model range</strong>: 8 to 434 (no CBS domain)
+   		<img src="images/Full3org-M4T.png" width="600" height="400" alt="M4T-3org" />
+   		 <div id="refs">
+   			<ul class="z">  Summary: 
+  				<li>Region of the target sequence covered by the model: 8 434</li>
+  				<li>Template(s) used : 2r9h_16_432_B 1kpl_22_438_D</li>
+  				<li>DOPE score(*) : -60401.132812</li>
+  				<li>Prosa2003 Zscore(*) : -5.29</li>
+  			</ul>
+   		</div>
+   	</p>
+   	</td>
+   	-->
+   	<td valign="top" width="50%">
+   	<p>
+   		<strong>Model range</strong>: 70 to 536 (partial N-ter helix, start of CBS domain)	
+   		<img src="images/cds3264-M4T.png" width="600" height="400" alt="M4T-wt-3org" />
+   		 <div id="refs">
+   			<ul class="z">  Summary: 
+  				<li>Region of the target sequence covered by the model: 93 519</li>
+  				<li>Template(s) used : 2r9h_16_432_B 1kpl_22_438_D</li>
+  				<li>DOPE score(*) : -60516.890625</li>
+  				<li>Prosa2003 Zscore(*) : -5.03</li>
+  			</ul>
+   		</div>
+   	</p>	
+   	</td>
+   </tr>
+  </tr> 
+  <tr>
+   <!-- <th>ModWeb: 3ORG</th> -->
+   <th>ModWeb: wt-3ORG</th>
+   <tr>
+   <!--
+   	<td valign="top" width="50%">
+   	<p><strong>Model range</strong>: 8 to 434 (no CBS domain)
+   		<img src="images/Full3org-ModWeb1.png" width="600" height="400" alt="M4T-3org" />
+   		<div id="refs">
+   			<ul class="z">  Summary: 
+				  <li>No. of sequences submitted: 1</li>
+				  <li>No. of hits detected      : 15</li>
+				  <li>No. of models calculated  : 8</li>
+				  <li>No. of models selected    : 2</li>
+				  <li>Model selection criteria  : LONGEST_DOPE,SEQID,MPQS,DOPE</li>
+				</ul>
+   		</div>
+   	</p>
+   	</td>
+   	-->
+   	<td valign="top" width="50%">
+   	<p><strong>Model range</strong>: 88 to 708 (no N-ter helices, CBS domain)	
+   		<img src="images/cds3264-ModWeb2.png" width="600" height="400" alt="M4T-wt-3org" />
+   		<div id="refs">
+   			<ul class="z">  Summary: 
+  				<li>No. of sequences submitted: 1</li>
+  				<li>No. of hits detected      : 15</li>
+  				<li>No. of models calculated  : 8</li>
+				  <li>No. of models selected    : 2</li>
+  				<li>Model selection criteria  : LONGEST_DOPE,SEQID,MPQS,DOPE</li>
+  			</ul>
+   		</div>
+   	</p>	
+   	</td>
+   </tr>
+  </tr>
+  
+  <tr>
+   	<!-- <th>SWISS-MOD: 3ORG</th> -->
+   	<th>SWISS-MOD: wt-3ORG</th>  	
+   	<tr>
+   	<td valign="top" halign="left" width="50%">
+   	<p><strong>Model range</strong>: 3 to 511 (partial CBS domain)
+   		<img src="images/Full3org-SWISS-MOD.png" width="600" height="400" alt="SWISS-MOD-3org" />
+   		<div id="refs">
+   			<ul class="z">  Summary: 
+					<li>Model information:</li>
+					<li>Modelled residue range: 3 to 516</li>
+					<li>Based on template:	3orgC (3.50 Å)</li>
+					<li>Sequence Identity [%]: 93.191</li>
+					<li>Evalue: 0</li><BR>
+					<li>Quality information:</li>
+					<li>QMEAN Z-Score: 0</li>
+  				<li><a href="data/SwissModelResults-CDS3264.pdf" target="_blank">Complete server report</a>
+				</ul>
+			</div>
+   			
+   	</p>
+   	</td>
+   	
+   	<td valign="top" halign="left" width="50%">
+   	<p><strong>Model range</strong>: 88 to 708 (no N-ter helices, CBS domain) 
+   		<img src="images/cds3264-SWISS-MOD.png" width="600" height="400" alt="SWISS-MOD-wt-3org" />
+   		<div id="refs">
+   			<ul class="z">Summary: 
+					<li>Model information:</li>	
+					<li>Modelled residue range:	 88 to 708</li>
+					<li>Based on template:	 3orgC (3.50 Å)</li>
+					<li>Sequence Identity [%]:	 83.736</li>
+					<li>Evalue:	 0.00e-1</li><BR>
+    			<li>Quality information:</li>
+					<li>QMEAN Z-Score: -6.439</li>
+					<li><a href="data/SwissModelResults-Full-3org.pdf" target="_blank">Complete server report</a>
+				</ul>
+			</div>
+    </p>
+   	</td>
+ 	</tr>
+  <tr>
+   	<th>I-TASSER: 3ORG</th><th>I-TASSER: wt-3ORG</th>  	
+   	<tr>
+   	<td valign="top" halign="left" width="50%">
+   	<p><strong>Model range</strong>: Full (632 residues)
+   		<img src="images/Full3org-TASSER.png" width="600" height="400" alt="TASSER-3org" />
+   		<div id="refs">
+   			<ul class="z">Summary: <a href="http://zhanglab.ccmb.med.umich.edu/I-TASSER/output/S71011/" target="_blank">output/S71011/</a>
+   				<li>Estimated accuracy of Model1: 0.78±0.09 (TM-score)    6.7±4.0Å (RMSD)</li>
+   			</ul>
+   		</div>
+   	</p>
+   	</td>
+   	
+   	<td valign="top" halign="left" width="50%">
+   	<p>
+   	 <strong>Model range</strong>: Full?? (715 residues)
+   	 <a href="http://zhanglab.ccmb.med.umich.edu/I-TASSER/output/S71011/" target="_blank">Zhang Lab @ U. Michigan</a>
+   		<img src="images/xxx-TASSER.png" width="600" height="400" alt="I-TASSER model: Not yet available, click on Summary link below to check on completion"/>
+   		<div id="refs">
+   			<ul class="z">Summary: <a href="http://zhanglab.ccmb.med.umich.edu/I-TASSER/output/S71698/" target="_blank">output/S71698/</a>
+   				<li>Estimated accuracy of Model1: ? (TM-score)    ?.0Å (RMSD)</li>
+   			<ul>
+   		</div>
+    </p>
+   	</td>
+   	</tr>
+ 	  </table>
+</div>
+
+<h2>Part II - Discussion</h2>
+
+	<ol class="c"><strong>Models of truncated vs. wild-type 3ORG</strong>
+		<li>
+			Three out of the four modelling programs seem to have a sequence length threshold: extending the input sequence by ~80 residues lessen the alreaady poor result with the truncated version. This is the case for M4T, ModWeb and the lesser extent, Swiss-Model
+			M4T is the worst performer of the set. It used for both submissions, the 2R9H structured deposited in 2007 by Miller & Nguitragool, which is none other that a mutant of 1OTS with fab fragments (its descriptive title is "Crystal Structure of Q207C Mutant of CLC-ec1 in complex with Fab"). It is almost comical to see that 
+		</li>
+		<li>
+		
+		</li>
+
+	</ol>
+	
+<h3>Conclusion:</h3>
+<!-- On a first trial I had submitted only the first 120 terminal residues for modelling (results not shown), and in this case, it made sense -->
+<p>While M4T does not have an outright input sequence length limit, unlike the SAM06 server whose limit is 600 residues, it does behave very oddly and is not to be relied on. 
+
+</div>
+</body>
+</html>
